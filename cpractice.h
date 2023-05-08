@@ -21,6 +21,7 @@
 
 #include <stdio.h> // basic input and output
 #include <stdlib.h> // standard library
+#include <math.h>
 
 /**
  * Basic struct to hold two coordinates
@@ -218,10 +219,10 @@ Point* create_point(int x, int y){
  * the point values. it is just a polygon of eventual size, and an array of empty points. 
 */
 Polygon* create_polygon(int size){
-    Polygon* polygon = (Polygon*) malloc(sizeof(Polygon)); 
-    polygon->size = size; 
-    polygon->points = (Point*) calloc(size, sizeof(Point)); 
-    return polygon; 
+    Polygon* polygon = (Polygon*)malloc(sizeof(Polygon));
+    polygon->size = size;
+    polygon->points = (Point*)calloc(size, sizeof(Point));
+    return polygon;
 }
 
 
@@ -252,7 +253,7 @@ void free_polygon(Polygon *p){
  * 0, height
 */
 Polygon* create_rectangle(int width, int height){
-    Polygon* rectangle = create_polygon(4);  /
+    Polygon* rectangle = create_polygon(4);  
     rectangle->points[0] = create_point(0, 0);
     rectangle->points[1] = create_point(width, 0);
     rectangle->points[2] = create_point(width, height);
@@ -310,9 +311,9 @@ void print_polygon(Polygon *p){
 double calculate_polygon_area(Polygon *p){
     double area = 0.0;
     int i, j;
-    for (i = 0; i < p->num_points; i++) {
-        j = (i + 1) % p->num_points; 
-        area += p->points[i].x * p->points[j].y - p->points[j].x * p->points[i].y;
+    for (i = 0; i < p->size; i++) {
+        j = (i + 1) % p->size; 
+        area += p->points[i]->x * p->points[j]->y - p->points[j]->x * p->points[i]->y;
     }
     return fabs(area / 2.0);
 }
