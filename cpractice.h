@@ -230,7 +230,16 @@ Polygon* create_polygon(int size){
  * all the points, to free them, free the array, and then free the polygon itself.
 */
 void free_polygon(Polygon *p){
-    
+    if(p == NULL){ 
+        return;
+    }
+    if(p->points != NULL){
+        for(int i = 0; i < p->size; i++){ 
+            free(p->points[i]);
+        }
+        free(p->points); 
+    }
+    free(p);
 }
 
 /**
