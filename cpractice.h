@@ -221,10 +221,12 @@ Point* create_point(int x, int y){
 Polygon* create_polygon(int size){
     Polygon* polygon = (Polygon*)malloc(sizeof(Polygon));
     polygon->size = size;
-    polygon->points = (Point*)calloc(size, sizeof(Point));
+    polygon->points = (Point**)calloc(size, sizeof(Point*)); 
+    for (int i = 0; i < size; i++) {
+        polygon->points[i] = (Point*)calloc(1, sizeof(Point)); 
+    }
     return polygon;
 }
-
 
 /**
  * Frees the memory used by the polygon, make sure to loop through
