@@ -204,7 +204,10 @@ Practice with struts
  * and returns the new point
 */
 Point* create_point(int x, int y){
-    return NULL;
+     Point* point = (Point*) malloc(sizeof(Point)); 
+    point->x = x; 
+    point->y = y; 
+    return point;
 }
 
 /**
