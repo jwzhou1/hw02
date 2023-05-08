@@ -1,6 +1,6 @@
 /**
- * Student Name:
- * Semester:
+ * Student Name: Jiawei Zhou
+ * Semester: Summer 2023
  * 
  * 
  * This file is to test the functions in cpractice.h. You are to write at least *TWO* (maybe more) tests for every function. 
