@@ -140,7 +140,12 @@ void reverse_array(int *arr, int size){
  * don't forget to free(*arr); before you set it to the new array.
 */
 void double_array_size(int **arr, int size){
-    
+    int *new_arr = (int *)calloc(2*size, sizeof(int)); 
+    for (int i = 0; i < size; i++) { 
+        new_arr[i] = (*arr)[i];
+    }
+    free(*arr); 
+    *arr = new_arr; 
 }
 
 
