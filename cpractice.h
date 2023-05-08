@@ -115,7 +115,10 @@ int* create_array_of_ints_fib(int size){
  * Consider using swap. 
 */
 void reverse_array(int *arr, int size){
-    
+     int mid = size / 2;
+    for (int i = 0; i < mid; i++) {
+        swap(&arr[i], &arr[size-1-i]);
+    }
 }
 
 
