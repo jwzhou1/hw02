@@ -173,7 +173,26 @@ void double_array_size(int **arr, int size){
  * Make sure to test this function, this is probably the hardest of the batch! 
 */
 int* copy_array_start_end_loop(int *arr, int size, int start, int end, int *new_size) {
-    return NULL;
+    if (start < 0 || start >= size || end < 0 || end >= size) { 
+        return NULL;
+    }
+    int steps = (end >= start) ? end - start + 1 : size - start + end + 1; 
+    int *new_arr = (int *)malloc(steps * sizeof(int)); 
+    if (end >= start) {
+        for (int i = 0; i < steps; i++) {
+            new_arr[i] = arr[start + i]; 
+        }
+    } else {
+        int j = 0;
+        for (int i = start; i < size; i++) {
+            new_arr[j++] = arr[i]; 
+        }
+        for (int i = 0; i <= end; i++) {
+            new_arr[j++] = arr[i]; 
+        }
+    }
+    *new_size = steps; 
+    return new_arr; 
 }
 
 /* 
