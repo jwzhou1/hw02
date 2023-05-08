@@ -90,7 +90,19 @@ void print_array(int *arr, int size)
  * here is a quick list of numbers: https://www.math.net/list-of-fibonacci-numbers
  **/
 int* create_array_of_ints_fib(int size){
-    return NULL;
+     if (size <= 0) {
+        return NULL;
+    }
+    int* fibArray = malloc(size * sizeof(int));
+    fibArray[0] = 1;
+    if (size == 1) {
+        return fibArray;
+    }
+    fibArray[1] = 1;
+    for (int i = 2; i < size; i++) {
+        fibArray[i] = fibArray[i-1] + fibArray[i-2];
+    }
+    return fibArray;
 }
 
 /**
