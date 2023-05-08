@@ -218,7 +218,10 @@ Point* create_point(int x, int y){
  * the point values. it is just a polygon of eventual size, and an array of empty points. 
 */
 Polygon* create_polygon(int size){
-    return NULL;
+    Polygon* polygon = (Polygon*) malloc(sizeof(Polygon)); 
+    polygon->size = size; 
+    polygon->points = (Point*) calloc(size, sizeof(Point)); 
+    return polygon; 
 }
 
 
