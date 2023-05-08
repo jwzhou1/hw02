@@ -252,7 +252,12 @@ void free_polygon(Polygon *p){
  * 0, height
 */
 Polygon* create_rectangle(int width, int height){
-    return NULL;
+    Polygon* rectangle = create_polygon(4);  /
+    rectangle->points[0] = create_point(0, 0);
+    rectangle->points[1] = create_point(width, 0);
+    rectangle->points[2] = create_point(width, height);
+    rectangle->points[3] = create_point(0, height);
+    return rectangle;
 }
 
 
