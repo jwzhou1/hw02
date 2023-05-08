@@ -308,7 +308,13 @@ void print_polygon(Polygon *p){
  * after area is summed across all points, divide by 2.0 and return the area.
 */
 double calculate_polygon_area(Polygon *p){
-    return 0.0;
+    double area = 0.0;
+    int i, j;
+    for (i = 0; i < p->num_points; i++) {
+        j = (i + 1) % p->num_points; 
+        area += p->points[i].x * p->points[j].y - p->points[j].x * p->points[i].y;
+    }
+    return fabs(area / 2.0);
 }
 
 #endif // C_PRACTICE_H
