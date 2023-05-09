@@ -197,6 +197,90 @@ int test_double_array_size2() {
     return 1;
 }
 
+/**
+ * One test for the copy_array_start_end_loop function
+ * Here we test normal range, end > start
+*/
+int test_copy_array_start_end_loop1() {
+    printf("11. test_copy_array_start_end_loop1()\n");
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = 5;
+    int new_size = 0;
+    int* new_arr = copy_array_start_end_loop(arr, size, 1, 3, &new_size);
+    if (new_arr == NULL || new_size != 3) {
+        free(new_arr);
+        return 0;
+    }
+    int expected1[] = {2, 3, 4};
+    for (int i = 0; i < new_size; i++) {
+        if (new_arr[i] != expected1[i]) {
+            free(new_arr);
+            return 0;
+        }
+    }
+    free(new_arr);
+    return 1;
+}
+
+/**
+ * Another test for the copy_array_start_end_loop function
+ * Here we test normal range, end < start
+*/
+int test_copy_array_start_end_loop2() {
+    printf("12. test_copy_array_start_end_loop2()\n");
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = 5;
+    int new_size = 0;
+    int* new_arr = copy_array_start_end_loop(arr, size, 3, 1, &new_size);
+    if (new_arr == NULL || new_size != 4) {
+        free(new_arr);
+        return 0;
+    }
+    int expected2[] = {4, 5, 1, 2};
+    for (int i = 0; i < new_size; i++) {
+        if (new_arr[i] != expected2[i]) {
+            free(new_arr);
+            return 0;
+        }
+    }
+    free(new_arr);
+    return 1;
+}
+
+/**
+ * Another test for the copy_array_start_end_loop function
+ * Here we test invalid start
+*/
+int test_copy_array_start_end_loop3() {
+    printf("13. test_copy_array_start_end_loop3()\n");
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = 5;
+    int new_size = 0;
+    int* new_arr = copy_array_start_end_loop(arr, size, -10, 2, &new_size);
+    if (new_arr != NULL) {
+        free(new_arr);
+        return 0;
+    }
+    return 1;
+}
+
+/**
+ * Another test for the copy_array_start_end_loop function
+ * Here we test invalid end
+*/
+int test_copy_array_start_end_loop4() {
+    printf("14. test_copy_array_start_end_loop4()\n");
+    int arr[] = {1, 2, 3, 4, 5};
+    int size = 5;
+    int new_size = 0;
+    int* new_arr = copy_array_start_end_loop(arr, size, 1, 20, &new_size);
+    if (new_arr != NULL) {
+        free(new_arr);
+        return 0;
+    }
+    return 1;
+}
+
 
 // this is a list of all the unit tests
 int (*unitTests[])() = {
@@ -209,7 +293,11 @@ int (*unitTests[])() = {
         test_reverse_array1,
         test_reverse_array2,
         test_double_array_size1,
-        test_double_array_size2
+        test_double_array_size2,
+        test_copy_array_start_end_loop1,
+        test_copy_array_start_end_loop2,
+        test_copy_array_start_end_loop3,
+        test_copy_array_start_end_loop4
         // add more test function names here
 };
 
