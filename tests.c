@@ -398,6 +398,49 @@ int test_create_polygon2()
     return 1;
 }
 
+/**
+ * One test for the free_polygon function
+*/
+int test_free_polygon1()
+{
+    printf("19. test_free_polygon1()\n");
+    Polygon *p4 = create_polygon(3);
+    p4->points[0]->x = 1;
+    p4->points[0]->y = 2;
+    p4->points[1]->x = 3;
+    p4->points[1]->y = 4;
+    p4->points[2]->x = 5;
+    p4->points[2]->y = 6;
+    free_polygon(p4);
+    if (p4 != NULL)
+    {
+        return 0;
+    }
+    return 1;
+}
+
+// /**
+//  * Another test for the free_polygon function
+// */
+// int test_free_polygon2()
+// {
+//     printf("20. test_free_polygon2()\n");
+//     Polygon *p = (Polygon*)malloc(sizeof(Polygon));
+//     p->size = 5;
+//     p->points = (Point**)calloc(p->size, sizeof(Point*)); 
+//     for (int i = 0; i < p->size; i++)
+//     {
+//         p->points[i] = (Point*)calloc(1, sizeof(Point)); 
+//     }
+    
+//     free_polygon(p);
+//     if (p->points != NULL || p != NULL)
+//     {
+//         return 0;
+//     }
+//     return 1;
+// }
+
 // this is a list of all the unit tests
 int (*unitTests[])() = {
     test_swap_one,
@@ -417,7 +460,8 @@ int (*unitTests[])() = {
     test_create_point1,
     test_create_point2,
     test_create_polygon1,
-    test_create_polygon2
+    test_create_polygon2,
+    test_free_polygon1
     // add more test function names here
 };
 
