@@ -1,27 +1,42 @@
 # Homework 2 Readme
-Name:
+Name: Jiawei Zhou
 
-Github Account name: 
+Github Account name: jwzhou1
 
 Link to Assignment on Github: (copy and paste the link to your assignment repo here)
 
+https://github.com/jwzhou1/hw02.git
+
 How many hours did it take you to complete this assignment (estimate)? 
+
+20 hours
 
 Did you collaborate with any other students/TAs/Professors? If so, tell us who and in what capacity.  
 - one per row, add more if needed
+
+No.
 
 
 Did you use any external resources (you do not have to cite in class material)? (Cite them below)  
 - one row per resource
 
+No.
+
 
 (Optional) What was your favorite part of the assignment? 
 
+I have learned that I should write function and tests at the same time.
+
 (Optional) How would you improve the assignment? 
+
+I think it is better to have more pictures to show what it looks like when we run the main function.
 
 ## Understanding C Questions
 
 1. What is the difference between a variable and a pointer?
+
+A variable is a named storage location that holds a value of a specific data type. For example: An integer variable can store integers. It is usually implemented on a computer as a block of memory space, characterized by an address and a size. A pointer, on the other hand, is a specialized variable that holds the memory address of another variable. In other words, a pointer points to the data that is contained in the memory address of another variable.
+
 2. In your test file, we had the following code:
     
     ```c
@@ -30,6 +45,14 @@ Did you use any external resources (you do not have to cite in class material)? 
     ```
     Later in the code we only `free(arr)` but not expected. Why is this? What is the difference in where they are stored in memory?
 3. What is the difference between the heap and stack when related to memory allocation and management?
+In computer memory management, the heap and the stack are two different regions of memory used for allocating and deallocating memory.
+
+The stack is a reserved region of memory that is automatically managed by the operating system. It is used to store local variables, function parameters, and other short-lived data. The stack grows and shrinks dynamically as functions are called and return, meaning that the memory allocated on the stack is typically limited in size.
+
+On the other hand, the heap is a larger pool of memory that is dynamically allocated by the program at runtime. Memory allocated on the heap remains available until explicitly deallocated (freed) by the program. The heap is typically used for dynamically sized data structures such as arrays and linked lists, and can be much larger than the stack.
+
+In summary, the main difference between the heap and the stack is that the stack is mainly used for storing function call-related data structures, while the heap is used for more flexible dynamic memory allocation and management during program execution.
+
 4. When you use `malloc`, where are you storing the information?
 5. Speaking about `malloc` and `calloc`, what is the difference between the two (you may need to research it!)?
 6. What are some common built in libraries used for C, list at least 3 and explain each one in your own words. Name a few functions in those libraries (hint: we used two of the most common ones in this assignment. There are many resources online that tell you functions in each library)?
