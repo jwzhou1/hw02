@@ -228,7 +228,6 @@ Polygon* create_polygon(int size){
     return polygon;
 }
 
-
 /**
  * Frees the memory used by the polygon, make sure to loop through
  * all the points, to free them, free the array, and then free the polygon itself.
