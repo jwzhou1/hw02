@@ -252,18 +252,11 @@ Polygon *create_polygon(int size)
 */
 void free_polygon(Polygon *p)
 {
-    if (p == NULL)
+    for (int i = 0; i < p->size; i++)
     {
-        return;
+        free(p->points[i]);
     }
-    if (p->points != NULL)
-    {
-        for (int i = 0; i < p->size; i++)
-        {
-            free(p->points[i]);
-        }
-        free(p->points);
-    }
+    free(p->points);
     free(p);
 }
 

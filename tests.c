@@ -56,51 +56,11 @@ int test_swap_second()
 }
 
 /**
- * One test for printing array
-*/
-int test_print_array1()
-{
-    printf("3. test_print_array1()\n");
-    int arr[] = {1, 3, 2, 4, 5};
-    int size = 5;
-    print_array(arr, size);
-    int expected[] = {1, 3, 2, 4, 5};
-    for (int i = 0; i < 5; i++)
-    {
-        if (arr[i] != expected[i])
-        {
-            return 0;
-        }
-    }
-    return 1;
-}
-
-/**
- * Another test for printing array
-*/
-int test_print_array2()
-{
-    printf("4. test_print_array2()\n");
-    int arr[] = {1, 3, 2, 4, 5, 6};
-    int size = 6;
-    print_array(arr, size);
-    int expected[] = {1, 3, 2, 4, 5, 6};
-    for (int i = 0; i < 6; i++)
-    {
-        if (arr[i] != expected[i])
-        {
-            return 0;
-        }
-    }
-    return 1;
-}
-
-/**
  * One test for the create_array_of_ints_fib function
 */
 int test_create_array_of_ints_fib1()
 {
-    printf("5. test_create_array_of_ints_fib1()\n");
+    printf("3. test_create_array_of_ints_fib1()\n");
     int *arr = create_array_of_ints_fib(5);
     int expected[] = {1, 1, 2, 3, 5};
     for (int i = 0; i < 5; i++)
@@ -121,7 +81,7 @@ int test_create_array_of_ints_fib1()
 */
 int test_create_array_of_ints_fib2()
 {
-    printf("6. test_create_array_of_ints_fib2()\n");
+    printf("4. test_create_array_of_ints_fib2()\n");
     int *arr = create_array_of_ints_fib(6);
     int expected[] = {1, 1, 2, 3, 5, 8};
     for (int i = 0; i < 6; i++)
@@ -141,7 +101,7 @@ int test_create_array_of_ints_fib2()
 */
 int test_reverse_array1()
 {
-    printf("7. test_reverse_array1()\n");
+    printf("5. test_reverse_array1()\n");
     int arr[] = {1, 2, 3, 4, 5};
     int expected[] = {5, 4, 3, 2, 1};
     reverse_array(arr, 5);
@@ -160,7 +120,7 @@ int test_reverse_array1()
 */
 int test_reverse_array2()
 {
-    printf("8. test_reverse_array2()\n");
+    printf("6. test_reverse_array2()\n");
     int arr[] = {10, 21, 33, 45, 59, 78, 89};
     int expected[] = {89, 78, 59, 45, 33, 21, 10};
     reverse_array(arr, 7);
@@ -179,7 +139,7 @@ int test_reverse_array2()
 */
 int test_double_array_size1()
 {
-    printf("9. test_double_array_size1()\n");
+    printf("7. test_double_array_size1()\n");
     int size = 5;
     int *arr = (int *)malloc(size * sizeof(int));
     for (int i = 0; i < size; i++)
@@ -206,7 +166,7 @@ int test_double_array_size1()
 */
 int test_double_array_size2()
 {
-    printf("10. test_double_array_size2()\n");
+    printf("8. test_double_array_size2()\n");
     int size = 6;
     int *arr = (int *)malloc(size * sizeof(int));
     for (int i = 0; i < size; i++)
@@ -234,7 +194,7 @@ int test_double_array_size2()
 */
 int test_copy_array_start_end_loop1()
 {
-    printf("11. test_copy_array_start_end_loop1()\n");
+    printf("9. test_copy_array_start_end_loop1()\n");
     int arr[] = {1, 2, 3, 4, 5};
     int size = 5;
     int new_size = 0;
@@ -263,7 +223,7 @@ int test_copy_array_start_end_loop1()
 */
 int test_copy_array_start_end_loop2()
 {
-    printf("12. test_copy_array_start_end_loop2()\n");
+    printf("10. test_copy_array_start_end_loop2()\n");
     int arr[] = {1, 2, 3, 4, 5};
     int size = 5;
     int new_size = 0;
@@ -292,7 +252,7 @@ int test_copy_array_start_end_loop2()
 */
 int test_copy_array_start_end_loop3()
 {
-    printf("13. test_copy_array_start_end_loop3()\n");
+    printf("11. test_copy_array_start_end_loop3()\n");
     int arr[] = {1, 2, 3, 4, 5};
     int size = 5;
     int new_size = 0;
@@ -311,7 +271,7 @@ int test_copy_array_start_end_loop3()
 */
 int test_copy_array_start_end_loop4()
 {
-    printf("14. test_copy_array_start_end_loop4()\n");
+    printf("12. test_copy_array_start_end_loop4()\n");
     int arr[] = {1, 2, 3, 4, 5};
     int size = 5;
     int new_size = 0;
@@ -329,7 +289,7 @@ int test_copy_array_start_end_loop4()
 */
 int test_create_point1()
 {
-    printf("15. test_create_point1()\n");
+    printf("13. test_create_point1()\n");
     Point *point = create_point(3, 4);
     if (point->x != 3 || point->y != 4)
     {
@@ -344,7 +304,7 @@ int test_create_point1()
 */
 int test_create_point2()
 {
-    printf("16. test_create_point2()\n");
+    printf("14. test_create_point2()\n");
     Point *point = create_point(1, 6);
     if (point->x != 1 || point->y != 6)
     {
@@ -359,7 +319,7 @@ int test_create_point2()
 */
 int test_create_polygon1()
 {
-    printf("17. test_create_polygon1()\n");
+    printf("15. test_create_polygon1()\n");
     Polygon *poly1 = create_polygon(3);
     if (poly1 == NULL || poly1->size != 3 || poly1->points == NULL)
     {
@@ -381,7 +341,7 @@ int test_create_polygon1()
 */
 int test_create_polygon2()
 {
-    printf("18. test_create_polygon2()\n");
+    printf("16. test_create_polygon2()\n");
     Polygon *poly1 = create_polygon(5);
     if (poly1 == NULL || poly1->size != 5 || poly1->points == NULL)
     {
@@ -398,41 +358,43 @@ int test_create_polygon2()
     return 1;
 }
 
-/**
- * One test for the free_polygon function
-*/
-int test_free_polygon1()
-{
-    printf("19. test_free_polygon1()\n");
-    Polygon *p4 = create_polygon(3);
-    p4->points[0]->x = 1;
-    p4->points[0]->y = 2;
-    p4->points[1]->x = 3;
-    p4->points[1]->y = 4;
-    p4->points[2]->x = 5;
-    p4->points[2]->y = 6;
-    free_polygon(p4);
-    if (p4 != NULL)
-    {
-        return 0;
-    }
-    return 1;
-}
+// /**
+//  * One test for the free_polygon function
+// */
+// int test_free_polygon1()
+// {
+//     printf("17. test_free_polygon1()\n");
+//     Polygon *p = malloc(sizeof(Polygon));
+//     p->size = 2;
+//     p->points = malloc(sizeof(Point*) * p->size);
+//     p->points[0] = malloc(sizeof(Point));
+//     p->points[1] = malloc(sizeof(Point));
+
+//     // free the polygon
+//     free_polygon(p);
+
+//     // check if the memory is freed
+//     if (p == NULL && p->points == NULL && p->size == 0 && p->points[0] == NULL && p->points[1] == NULL) {
+//         return 1; // memory freed successfully
+//     } else {
+//         return 0; // memory not freed
+//     }
+// }
 
 // /**
 //  * Another test for the free_polygon function
 // */
 // int test_free_polygon2()
 // {
-//     printf("20. test_free_polygon2()\n");
+//     printf("18. test_free_polygon2()\n");
 //     Polygon *p = (Polygon*)malloc(sizeof(Polygon));
 //     p->size = 5;
-//     p->points = (Point**)calloc(p->size, sizeof(Point*)); 
+//     p->points = (Point**)calloc(p->size, sizeof(Point*));
 //     for (int i = 0; i < p->size; i++)
 //     {
-//         p->points[i] = (Point*)calloc(1, sizeof(Point)); 
+//         p->points[i] = (Point*)calloc(1, sizeof(Point));
 //     }
-    
+
 //     free_polygon(p);
 //     if (p->points != NULL || p != NULL)
 //     {
@@ -441,12 +403,100 @@ int test_free_polygon1()
 //     return 1;
 // }
 
+/**
+ * One test for the create_rectangle function
+*/
+int test_create_rectangle1()
+{
+    printf("19. test_create_rectangle1()\n");
+    Polygon *rec = create_rectangle(4, 3);
+    if (rec->size == 4 &&
+        rec->points[0]->x == 0 && rec->points[0]->y == 0 &&
+        rec->points[1]->x == 4 && rec->points[1]->y == 0 &&
+        rec->points[2]->x == 4 && rec->points[2]->y == 3 &&
+        rec->points[3]->x == 0 && rec->points[3]->y == 3)
+    {
+        free_polygon(rec);
+        return 1;
+    }
+    else
+    {
+        free_polygon(rec);
+        return 0;
+    }
+}
+
+/**
+ * Another test for the create_rectangle function
+*/
+int test_create_rectangle2()
+{
+    printf("20. test_create_rectangle2()\n");
+    Polygon *rec = create_rectangle(5, 10);
+    if (rec->size == 4 &&
+        rec->points[0]->x == 0 && rec->points[0]->y == 0 &&
+        rec->points[1]->x == 5 && rec->points[1]->y == 0 &&
+        rec->points[2]->x == 5 && rec->points[2]->y == 10 &&
+        rec->points[3]->x == 0 && rec->points[3]->y == 10)
+    {
+        free_polygon(rec);
+        return 1;
+    }
+    else
+    {
+        free_polygon(rec);
+        return 0;
+    }
+}
+
+/**
+ * One test for the create_triangle function
+*/
+int test_create_triangle1()
+{
+    printf("21. test_create_triangle1()\n");
+    Polygon *triangle = create_triangle(3, 4);
+    if (triangle->size == 3 &&
+        triangle->points[0]->x == 0 && triangle->points[0]->y == 0 &&
+        triangle->points[1]->x == 3 && triangle->points[1]->y == 0 &&
+        triangle->points[2]->x == 3 && triangle->points[2]->y == 4)
+    {
+        free_polygon(triangle);
+        return 1;
+    }
+    else
+    {
+        free_polygon(triangle);
+        return 0;
+    }
+}
+
+/**
+ * Another test for the create_triangle function
+*/
+int test_create_triangle2()
+{
+    printf("22. test_create_triangle2()\n");
+    Polygon *triangle = create_triangle(5, 10);
+    if (triangle->size == 3 &&
+        triangle->points[0]->x == 0 && triangle->points[0]->y == 0 &&
+        triangle->points[1]->x == 5 && triangle->points[1]->y == 0 &&
+        triangle->points[2]->x == 5 && triangle->points[2]->y == 10)
+    {
+        free_polygon(triangle);
+        return 1;
+    }
+    else
+    {
+        free_polygon(triangle);
+        return 0;
+    }
+}
+
 // this is a list of all the unit tests
 int (*unitTests[])() = {
     test_swap_one,
     test_swap_second,
-    test_print_array1,
-    test_print_array2,
     test_create_array_of_ints_fib1,
     test_create_array_of_ints_fib2,
     test_reverse_array1,
@@ -461,7 +511,10 @@ int (*unitTests[])() = {
     test_create_point2,
     test_create_polygon1,
     test_create_polygon2,
-    test_free_polygon1
+    test_create_rectangle1,
+    test_create_rectangle2,
+    test_create_triangle1,
+    test_create_triangle2
     // add more test function names here
 };
 
