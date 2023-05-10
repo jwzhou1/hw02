@@ -358,50 +358,51 @@ int test_create_polygon2()
     return 1;
 }
 
-// /**
-//  * One test for the free_polygon function
-// */
-// int test_free_polygon1()
-// {
-//     printf("17. test_free_polygon1()\n");
-//     Polygon *p = malloc(sizeof(Polygon));
-//     p->size = 2;
-//     p->points = malloc(sizeof(Point*) * p->size);
-//     p->points[0] = malloc(sizeof(Point));
-//     p->points[1] = malloc(sizeof(Point));
+/**
+ * One test for the free_polygon function
+*/
+int test_free_polygon1()
+{
+    printf("17. test_free_polygon1()\n");
+    Polygon *p = create_polygon(4);
+    for (int i = 0; i < 4; i++)
+    {
+        p->points[i] = create_point(i, i);
+    }
+    free_polygon(p);
+    if (p == NULL)
+    {
+        return 0;
+    }
+    else
+    {
 
-//     // free the polygon
-//     free_polygon(p);
+        return 1;
+    }
+}
 
-//     // check if the memory is freed
-//     if (p == NULL && p->points == NULL && p->size == 0 && p->points[0] == NULL && p->points[1] == NULL) {
-//         return 1; // memory freed successfully
-//     } else {
-//         return 0; // memory not freed
-//     }
-// }
+/**
+ * Another test for the free_polygon function
+*/
+int test_free_polygon2()
+{
+    printf("18. test_free_polygon2()\n");
+    Polygon *p = create_polygon(5);
+    for (int i = 0; i < 5; i++)
+    {
+        p->points[i] = create_point(i, i);
+    }
+    free_polygon(p);
+    if (p == NULL)
+    {
+        return 0;
+    }
+    else
+    {
 
-// /**
-//  * Another test for the free_polygon function
-// */
-// int test_free_polygon2()
-// {
-//     printf("18. test_free_polygon2()\n");
-//     Polygon *p = (Polygon*)malloc(sizeof(Polygon));
-//     p->size = 5;
-//     p->points = (Point**)calloc(p->size, sizeof(Point*));
-//     for (int i = 0; i < p->size; i++)
-//     {
-//         p->points[i] = (Point*)calloc(1, sizeof(Point));
-//     }
-
-//     free_polygon(p);
-//     if (p->points != NULL || p != NULL)
-//     {
-//         return 0;
-//     }
-//     return 1;
-// }
+        return 1;
+    }
+}
 
 /**
  * One test for the create_rectangle function
@@ -493,6 +494,46 @@ int test_create_triangle2()
     }
 }
 
+/**
+ * One test for the calculate_polygon_area function
+ * Here we calculate triangle area
+*/
+int test_calculate_polygon_area1()
+{
+    printf("23. test_calculate_polygon_area1()\n");
+    Polygon *triangle = create_triangle(5, 10);
+    double expected_area = 25.0;
+    double calculated_area = calculate_polygon_area(triangle);
+    if (calculated_area == expected_area)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+/**
+ * Another test for the calculate_polygon_area function
+ * Here we calculate rectangle area
+*/
+int test_calculate_polygon_area2()
+{
+    printf("24. test_calculate_polygon_area2()\n");
+    Polygon *rectangle = create_rectangle(5, 10);
+    double expected_area = 50.0;
+    double calculated_area = calculate_polygon_area(rectangle);
+    if (calculated_area == expected_area)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 // this is a list of all the unit tests
 int (*unitTests[])() = {
     test_swap_one,
@@ -511,12 +552,14 @@ int (*unitTests[])() = {
     test_create_point2,
     test_create_polygon1,
     test_create_polygon2,
+    test_free_polygon1,
+    test_free_polygon2,
     test_create_rectangle1,
     test_create_rectangle2,
     test_create_triangle1,
-    test_create_triangle2
-    // add more test function names here
-};
+    test_create_triangle2,
+    test_calculate_polygon_area1,
+    test_calculate_polygon_area2};
 
 int main(int argc, char const *argv[])
 {

@@ -252,8 +252,7 @@ Polygon *create_polygon(int size)
 */
 void free_polygon(Polygon *p)
 {
-    for (int i = 0; i < p->size; i++)
-    {
+   for (int i = 0; i < p->size; i++) {
         free(p->points[i]);
     }
     free(p->points);
